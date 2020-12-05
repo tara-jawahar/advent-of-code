@@ -41,7 +41,7 @@ def challenge2(input):
 
 
 if __name__ == "__main__":
-    input = pd.read_csv("day1_input.csv")
+    input = pd.read_csv("inputs/day1_input.csv")
     # sample = pd.DataFrame([200, 75, 800, 1100, 1020])
     # print(challenge1(input))
     print(challenge2(input))
