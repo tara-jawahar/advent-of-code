@@ -43,7 +43,7 @@ def find_contiguous_sum(input, n):
 
     for L in cont_nums:
         for i in range(0, len(L)):
-            temp_list, temp_sum, start = [L[i]], L[i], 0
+            temp_list, temp_sum = [L[i]], L[i]
             for j in range(i+1, len(L)):
                 if temp_sum < sum:
                     temp_list += [input[j]]
