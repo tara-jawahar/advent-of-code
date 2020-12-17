@@ -6,15 +6,9 @@ def memory_game(input, limit):
     for i,n in enumerate(input[:-1]):
         past_nums[n] = [i+1]
         visited.add(n)
-        # print(i+1, n)
-    # print(past_nums)
     curr_num = input[-1]
     for turn in range(len(input)+1, limit+1):
-        # print("entering loop", turn, curr_num)
-        # print("bottleneck?")
         if curr_num in visited:
-            # print('visited before')
-            # print(turn, past_nums[curr_num])
             if len(past_nums[curr_num]) < 2:
                 curr_num = (turn-1) - past_nums[curr_num][-1]
             else:
@@ -25,13 +19,10 @@ def memory_game(input, limit):
             else:
                 past_nums[curr_num] += [turn]
         else:
-            # print('new num')
             past_nums[curr_num] = [turn-1]
             visited.add(curr_num)
             curr_num = 0
             past_nums[0] += [turn]
-        # print(visited, set(past_nums.keys()))
-        # print(turn, curr_num, past_nums)
     return curr_num
 
 if __name__ == '__main__':
